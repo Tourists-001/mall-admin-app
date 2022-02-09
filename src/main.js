@@ -6,7 +6,7 @@ import './plugins/ant-design-vue';
 // 清除默认样式
 import '@/assets/css/reset.less';
 
-Vue.config.productionTip = false;
+// Vue.config.productionTip = false;
 
 new Vue({
   router,

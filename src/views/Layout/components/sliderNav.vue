@@ -23,6 +23,7 @@ export default {
       this.$store.dispatch('changeCollapsed');
     },
     handleClick() {
+      this.$store.dispatch('changeLogin');
       this.$router.push({
         name: 'Login',
       });
