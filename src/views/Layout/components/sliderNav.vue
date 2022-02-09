@@ -10,8 +10,8 @@
       </a-breadcrumb>
     </div>
     <ul class="user-info">
-      <li>欢迎,youKe001 <a-icon type="down" /></li>
-      <li>退出</li>
+      <li>欢迎,{{this.$store.state.user.username}} <a-icon type="down" /></li>
+      <li @click="handleClick">退出</li>
     </ul>
   </div>
 </template>
@@ -21,6 +21,12 @@ export default {
   methods: {
     toggleCollapsed() {
       this.$store.dispatch('changeCollapsed');
+    },
+    handleClick() {
+      this.$router.push({
+        name: 'Login',
+      });
+      this.$message.success('退出成功');
     },
   },
 };

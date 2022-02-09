@@ -50,8 +50,8 @@ export default {
     };
     return {
       LoginForm: {
-        password: '',
         email: '',
+        password: '',
       },
       rules: {
         password: [{ validator: validatePass, trigger: 'change' }],
@@ -68,15 +68,14 @@ export default {
       // eslint-disable-next-line consistent-return
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          api.login(this.LoginForm).then(() => {
+          api.login(this.LoginForm).then(({ data }) => {
+            this.$store.dispatch('changeUserInfo', data);
+            this.$message.success('登录成功');
             this.$router.push({
               name: 'Home',
             });
           }).catch((error) => {
             this.$message.error(error);
-            this.$router.push({
-              name: 'Home',
-            });
           });
         } else {
           console.log('error submit!!');
