@@ -6,7 +6,8 @@
     <div class="breadcrumb">
       <a-breadcrumb>
         <a-breadcrumb-item>{{this.$route.meta.parentTitle}}</a-breadcrumb-item>
-        <a-breadcrumb-item>{{this.$route.meta.title}}</a-breadcrumb-item>
+        <a-breadcrumb-item><router-link :to="{name:$route.name}">
+          {{this.$route.meta.title}}</router-link></a-breadcrumb-item>
       </a-breadcrumb>
     </div>
     <ul class="user-info">

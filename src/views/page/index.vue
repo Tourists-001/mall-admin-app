@@ -1,9 +1,24 @@
 <template>
-<h1>统计信息</h1>
+<div class="index-container">
+  <div class="card">
+      <Card />
+  </div>
+  <div class="eChart">
+      <Echarts />
+  </div>
+</div>
 </template>
 
 <script>
-export default {};
+import Card from '@/components/card.vue';
+import Echarts from '@/components/Echarts.vue';
+
+export default {
+  components: {
+    Card,
+    Echarts,
+  },
+};
 </script>
 
 <style></style>
