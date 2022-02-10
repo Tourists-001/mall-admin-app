@@ -5,8 +5,8 @@
     </a-button>
     <div class="breadcrumb">
       <a-breadcrumb>
-        <a-breadcrumb-item><router-link to="">首页</router-link></a-breadcrumb-item>
-        <a-breadcrumb-item><router-link to="">统计</router-link></a-breadcrumb-item>
+        <a-breadcrumb-item>{{this.$route.meta.parentTitle}}</a-breadcrumb-item>
+        <a-breadcrumb-item>{{this.$route.meta.title}}</a-breadcrumb-item>
       </a-breadcrumb>
     </div>
     <ul class="user-info">
