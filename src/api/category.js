@@ -9,11 +9,4 @@ export default {
       params,
     });
   },
-  test(params) {
-    return axios({
-      url: 'https://qcyp1k.api.cloudendpoint.cn/test',
-      method: 'post',
-      params,
-    });
-  },
 };

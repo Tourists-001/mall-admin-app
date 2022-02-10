@@ -7,7 +7,6 @@ const instance = axios.create({
 });
 // 请求拦截器
 instance.interceptors.request.use((config) => {
-  console.log(config);
   if (config.url.includes('/passport')) {
     return config;
   }
@@ -26,7 +25,6 @@ instance.interceptors.response.use((response) => {
     return Promise.reject(response.data.msg);
   // eslint-disable-next-line no-else-return
   } else {
-    console.log(response);
     return response.data.data;
   }
 }, (error) => Promise.reject(error));

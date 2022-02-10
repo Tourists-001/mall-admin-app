@@ -17,7 +17,7 @@
         @change="handleChange"
         allowClear
       >
-        <a-select-option v-for="c in categoryList" :key="c.id" :value="c.id">
+        <a-select-option v-for="c in data" :key="c.id" :value="c.id">
           {{ c.name }}
         </a-select-option>
       </a-select>
@@ -28,13 +28,12 @@
         html-type="submit"
         :disabled="searchForm.user === '' || searchForm.password === ''"
       >
-        Log in
+        检索
       </a-button>
     </a-form-model-item>
   </a-form-model>
 </template>
 <script>
-import api from '@/api/category';
 
 export default {
   data() {
@@ -43,9 +42,9 @@ export default {
         searchWorld: '',
         category: '',
       },
-      categoryList: [],
     };
   },
+  props: ['data'],
   methods: {
     handleSubmit() {
       this.$emit('submit', this.searchForm);
@@ -53,11 +52,6 @@ export default {
     handleChange(val) {
       this.searchForm.category = val;
     },
-  },
-  created() {
-    api.getCategory().then((res) => {
-      this.categoryList = res.data;
-    });
   },
 };
 </script>

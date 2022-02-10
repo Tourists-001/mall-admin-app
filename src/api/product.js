@@ -2,9 +2,9 @@
 import axios from '@/axios';
 
 export default {
-  getCategory(params) {
+  getProductList(params) {
     return axios({
-      url: 'https://mallapi.duyiedu.com/category/all',
+      url: 'https://mallapi.duyiedu.com/products/all',
       method: 'get',
       params,
     });
