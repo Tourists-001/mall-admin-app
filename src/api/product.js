@@ -16,4 +16,14 @@ export default {
       params: { id },
     });
   },
+  addProduct(params) {
+    return axios({
+      url: 'https://mallapi.duyiedu.com/products/add',
+      method: 'post',
+      params,
+    });
+  },
+  detail(id) {
+    return axios.get(`https://mallapi.duyiedu.com/products/:${id}`);
+  },
 };

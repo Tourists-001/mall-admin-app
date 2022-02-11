@@ -46,6 +46,7 @@
 import api from '@/api/category';
 
 export default {
+  props: ['form'],
   data() {
     return {
       labelCol: { span: 4 },
@@ -53,13 +54,6 @@ export default {
       categoryList: [],
       categoryItems: [],
       rules: [],
-      form: {
-        title: '',
-        desc: '',
-        category: '',
-        c_items: [],
-        tags: [],
-      },
     };
   },
   created() {

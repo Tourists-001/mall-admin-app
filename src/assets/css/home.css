@@ -24,6 +24,7 @@
   padding-left: 20px;
 }
 .home-container .main-app .main-header .user-info {
+  position: relative;
   user-select: none;
   float: right;
   padding-right: 50px;
@@ -31,6 +32,9 @@
   text-align: center;
 }
 .home-container .main-app .main-header .user-info li:not(:first-child) {
+  position: absolute;
+  width: 100px;
+  height: 50px;
   display: none;
 }
 .home-container .main-app .main-header .user-info li:not(:first-child):hover {

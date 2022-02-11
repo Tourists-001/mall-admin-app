@@ -4,20 +4,21 @@
       <a-step v-for="item in steps" :key="item.title" :title="item.title" />
     </a-steps>
     <div class="steps-content">
-      <basicDetail v-if="current === 0" @next="nextStep"/>
-      <saleDetail  v-else-if="current === 1" />
+      <BasicDetail v-if="current === 0" @next="nextStep" :form="form"/>
+      <SaleDetail  v-else-if="current === 1" @pre="preStep" :form="form" @onSubmit="onSubmits"/>
     </div>
   </div>
 </template>
 
 <script>
-import basicDetail from '@/components/basicDetail.vue';
-import saleDetail from '@/components/saleDetail.vue';
+import BasicDetail from '@/components/basicDetail.vue';
+import SaleDetail from '@/components/saleDetail.vue';
+import api from '@/api/product';
 
 export default {
   components: {
-    basicDetail,
-    saleDetail,
+    BasicDetail,
+    SaleDetail,
   },
   data() {
     return {
@@ -32,11 +33,51 @@ export default {
           content: 'Second-content',
         },
       ],
+      form: {
+        title: '',
+        desc: '',
+        category: '',
+        c_items: [],
+        tags: [],
+        price: 0,
+        price_off: 0,
+        unit: '',
+        inventory: 0,
+        images: [],
+      },
     };
   },
+  mounted() {
+    const { id } = this.$route.params;
+    if (id) {
+      console.log(this.form);
+      // api.detail(id).then((res) => {
+      //   console.log(res);
+      // });
+    }
+  },
   methods: {
-    nextStep(data) {
-      console.log(data);
+    nextStep(form) {
+      this.form = {
+        ...this.form,
+        ...form,
+      };
+      if (this.current === 1) {
+        // console.log(this.form);
+      } else {
+        this.current = 1;
+      }
+    },
+    preStep() {
+      this.current = 0;
+    },
+    onSubmits(data) {
+      api.addProduct(data).then(() => {
+        this.$message.success('添加成功');
+        this.$router.push({
+          name: 'ProductList',
+        });
+      });
     },
   },
 
