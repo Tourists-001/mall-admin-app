@@ -40,6 +40,17 @@ const ayncRouterMap = [{
     component: () => import('@/views/page/productAdd.vue'),
   },
   {
+    path: 'edit/:id',
+    name: 'ProductEdit',
+    meta: {
+      title: '修改商品',
+      hidden: true,
+      icon: 'dingding',
+      parentTitle: '商品',
+    },
+    component: () => import('@/views/page/productAdd.vue'),
+  },
+  {
     path: 'category',
     name: 'Category',
     meta: {

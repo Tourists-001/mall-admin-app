@@ -34,6 +34,7 @@
   display: none;
 }
 .home-container .main-app .main-header .user-info li:not(:first-child):hover {
+  display: block;
   background-color: #eee;
   color: #999;
   font-weight: 700;

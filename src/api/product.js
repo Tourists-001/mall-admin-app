@@ -9,4 +9,11 @@ export default {
       params,
     });
   },
+  removeProduct(id) {
+    return axios({
+      url: 'https://qcyp1k.api.cloudendpoint.cn/remove',
+      method: 'delete',
+      params: { id },
+    });
+  },
 };

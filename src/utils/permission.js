@@ -7,6 +7,8 @@ const roleToRoute = {
     name: 'ProductList',
   }, {
     name: 'ProductAdd',
+  }, {
+    name: 'ProductEdit',
   }],
   // eslint-disable-next-line quote-props
   'mock': [{
@@ -17,6 +19,8 @@ const roleToRoute = {
     name: 'ProductAdd',
   }, {
     name: 'Category',
+  }, {
+    name: 'ProductEdit',
   }],
 };
 

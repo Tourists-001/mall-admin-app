@@ -1,6 +1,6 @@
 <template>
   <div class="home-container">
-    <LeftMenu />
+    <LeftMenu :key="key"/>
     <div :class="{ 'main-app': true, 'menu-unfold': $store.state.collapsed }">
       <SliderNav />
       <RouterView/>
@@ -19,7 +19,13 @@ export default {
   },
   data() {
     return {
+      key: new Date().getTime(),
     };
+  },
+  watch: {
+    $route() {
+      this.key = new Date().getTime();
+    },
   },
   methods: {
 
