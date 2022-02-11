@@ -1,9 +1,16 @@
 <template>
-  <h2>新增商品</h2>
+  <div class="product-add-container">
+  <Step />
+  </div>
 </template>
 
 <script>
+import Step from '@/components/Step.vue';
+
 export default {
+  components: {
+    Step,
+  },
 
 };
 </script>
