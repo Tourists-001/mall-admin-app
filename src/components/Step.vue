@@ -50,7 +50,6 @@ export default {
   mounted() {
     const { id } = this.$route.params;
     if (id) {
-      console.log(this.form);
       // api.detail(id).then((res) => {
       //   console.log(res);
       // });

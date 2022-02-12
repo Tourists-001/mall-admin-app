@@ -21,4 +21,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.card {
+  overflow: hidden;
+}
+</style>

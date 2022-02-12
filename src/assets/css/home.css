@@ -36,6 +36,7 @@
   width: 100px;
   height: 50px;
   display: none;
+  z-index: 10;
 }
 .home-container .main-app .main-header .user-info li:not(:first-child):hover {
   display: block;

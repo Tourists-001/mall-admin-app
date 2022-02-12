@@ -9,4 +9,17 @@ export default {
       params,
     });
   },
+  editCategory(params) {
+    return axios({
+      url: 'https://mallapi.duyiedu.com/category/edit',
+      method: 'put',
+      params,
+    });
+  },
+  CategoryNum() {
+    return axios({
+      url: 'https://qcyp1k.api.cloudendpoint.cn/categoryList',
+      method: 'post',
+    });
+  },
 };
